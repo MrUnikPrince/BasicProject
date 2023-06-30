@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BGCchanger</title>  
+    <style>
+        .container {
+            /* text-align: center; */
+        }
+        .button {
+            /* width: 5%; */
+            /* height: 10%; */
+            border: 2px solid black;
+            margin: 15px;
+            padding: 25px;
+            background-color: gray;
+            cursor: pointer;
+        }
+        #gray{
+            background-color: gray;
+        }
+        #red{
+            background-color: red;
+        }
+        #black{
+            background-color: black;
+        }
+        #blue{
+            background-color: blue;
+        }
+    </style> 
+</head>
+<body>
+    <div class="container">
+        <h1>Color Scheme Switcher</h1>
+        <span class="button" id="gray"></span>
+        <span class="button" id="red"></span>
+        <span class="button" id="black"></span>
+        <span class="button" id="blue"></span>
+    </div>
+    <h2>Try clicking on one of the colors above</h2>
+    <span>
+        to change the background color of this page
+    </span>
+    <script>
+        const button = document.querySelectorAll('.button');
+        const body = document.querySelector('body');
+
+        button.forEach(button => {
+            button.addEventListener('click', (e) => {
+                console.log(e.target);
+                console.log(e);
+                if(e.target.id === 'gray'){
+                    body.style.backgroundColor = e.target.id;
+                    body.style.color = "blue";
+                }
+                if(e.target.id === 'red'){
+                    body.style.backgroundColor = "green";
+                    body.style.color = "darkgreen";
+
+                }
+                if(e.target.id === 'black'){
+                    body.style.backgroundColor = e.target.id;
+                    body.style.color = "white";
+
+                }
+                if(e.target.id === 'blue'){
+                    body.style.backgroundColor = e.target.id;
+                    body.style.color = "gray";
+
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
